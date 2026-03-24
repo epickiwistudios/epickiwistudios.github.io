@@ -1,0 +1,132 @@
+:root {
+  --bg: #f5f8f1;
+  --surface: rgba(255, 255, 255, 0.84);
+  --text: #182018;
+  --muted: #596653;
+  --accent: #5f8f3a;
+  --border: rgba(24, 32, 24, 0.1);
+  --shadow: 0 24px 60px rgba(42, 63, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(134, 197, 85, 0.3), transparent 36%),
+    linear-gradient(180deg, #eef6e6 0%, var(--bg) 45%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page-shell {
+  width: min(960px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 2rem;
+}
+
+.hero {
+  padding: 1rem 0 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  max-width: 12ch;
+}
+
+.hero-copy {
+  margin: 1.25rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 42rem;
+  color: var(--muted);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.info-grid {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.info-grid div {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-grid div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+dt {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer {
+  padding-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding-top: 2.5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
